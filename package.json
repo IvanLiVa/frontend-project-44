@@ -2,6 +2,9 @@
   "name": "@hexlet/frontend-project-44",
   "version": "1.0.0",
   "description": "[![Actions Status](https://github.com/IvanLiVa/frontend-project-44/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/IvanLiVa/frontend-project-44/actions)",
+  "bin": {
+    "brain-games": "bin/brain-games.js"
+  },
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -16,8 +19,12 @@
   ],
   "author": "Ivan Li",
   "license": "ISC",
+  "type": "module",
   "bugs": {
     "url": "https://github.com/IvanLiVa/frontend-project-44/issues"
   },
-  "homepage": "https://github.com/IvanLiVa/frontend-project-44#readme"
+  "homepage": "https://github.com/IvanLiVa/frontend-project-44#readme",
+  "dependencies": {
+    "readline-sync": "^1.4.10"
+  }
 }
