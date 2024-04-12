@@ -3,3 +3,6 @@
 
 # CodeClimat
 [![Maintainability](https://api.codeclimate.com/v1/badges/003b1743636d3068ff0d/maintainability)](https://codeclimate.com/github/IvanLiVa/frontend-project-44/maintainability)
+
+# Link to asciinema session
+[asciinema](https://asciinema.org/a/hzr10TmDvOcMiRkmuNsAm6KAz)
