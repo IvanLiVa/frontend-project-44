@@ -10,8 +10,14 @@
 # Link to asciinema session calcGame
  ![asciinema](https://asciinema.org/a/6lHB00mKZq5JiZ2TiG8czSf3f)
 
+ # Link to asciinema session gcdGame
+  ![asciinema](https://asciinema.org/a/Iq7uNT3zxTshRXrItY0p34qxw)
+
 # Video demonstration of the application even in action
 ![asciinema gif](demo.gif)
 
 # Video demonstration of the application calc in action
 ![asciinema gif](calc.gif)
+
+# Video demonstration of the application gcd in action
+![asciinema gif](gcd.gif)
