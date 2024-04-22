@@ -5,35 +5,35 @@ const userName = gretting();
 const ruleGame = 'What is the result of the expression?';
 console.log(ruleGame);
 
+const calcExpression = (operator, number1, number2) => {
+  switch (operator) {
+    case '+':
+      return number1 + number2;
+    case '-':
+      return number1 - number2;
+    case '*':
+      return number1 * number2;
+    default:
+      throw new Error('Unknown operator');
+  }
+};
+
+const generateExpression = () => {
+  const operators = ['+', '-', '*'];
+  const randomOperator = operators[Math.floor(Math.random() * operators.length)];
+  const number1 = Math.floor(Math.random() * 100);
+  const number2 = Math.floor(Math.random() * 100);
+  return {
+    question: `${number1} ${randomOperator} ${number2}`,
+    rightAnswer: calcExpression(randomOperator, number1, number2),
+  };
+};
+
 const calc = () => {
-  let i = 0;
-  while (i < 3) {
-    const numberOfIndex = Math.floor(Math.random() * 3);
-    const operators = ['+', '-', '*'];
-    const randomOperator = operators[numberOfIndex];
-    const number1 = Math.floor(Math.random() * 100);
-    const number2 = Math.floor(Math.random() * 100);
-    const question = `${number1} ${randomOperator} ${number2}`;
-    let rightAnswer;
-    switch (randomOperator) {
-      case '+':
-        rightAnswer = number1 + number2;
-        break;
-      case '-':
-        rightAnswer = number1 - number2;
-        break;
-      case '*':
-        rightAnswer = number1 * number2;
-        break;
-      default:
-        console.error('Unknown operator');
-    }
+  for (let i = 0; i < 3; i += 1) {
+    const { question, rightAnswer } = generateExpression();
     const isCorrect = mainLogicGame(question, rightAnswer, userName);
-    if (isCorrect) {
-      i += 1;
-    } else {
-      return;
-    }
+    if (!isCorrect) return;
   }
   console.log(`Congratulations, ${userName} !`);
 };
