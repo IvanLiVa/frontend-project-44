@@ -1,10 +1,11 @@
 import mainLogicGame from '../index.js';
 import gretting from '../cli.js';
 
+const userName = gretting();
+const ruleGame = 'What is the result of the expression?';
+console.log(ruleGame);
+
 const calc = () => {
-  const userName = gretting();
-  const ruleGame = 'What is the result of the expression?';
-  console.log(ruleGame);
   let i = 0;
   while (i < 3) {
     const numberOfIndex = Math.floor(Math.random() * 3);
