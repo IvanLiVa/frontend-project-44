@@ -13,14 +13,11 @@ const isEven = (count) => {
 
 const askNumberQuestions = () => {
   const userName = greeting('Answer "yes" if the number is even, otherwise answer "no".');
-  let i = 0;
-  while (i < 3) {
+  for (let i = 0; i < 3; i += 1) {
     const question = Math.floor(Math.random() * 100);
     const rightAnswer = isEven(question);
     const isCorrect = mainLogicGame(question, rightAnswer, userName);
-    if (isCorrect) {
-      i += 1;
-    } else {
+    if (!isCorrect) {
       return;
     }
   }
