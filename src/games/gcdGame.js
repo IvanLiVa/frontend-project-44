@@ -41,7 +41,7 @@ const gcd = () => {
     const number2 = Math.floor(Math.random() * 100);
     const arr1 = findFactor(number1);
     const arr2 = findFactor(number2);
-    const question = `${number1}  ${number2}`;
+    const question = `${number1} ${number2}`;
     const commonArray = findCommonArray(arr1, arr2);
     const rightAnswer = findRightAnswer(commonArray);
     const isCorrect = mainLogicGame(question, rightAnswer, userName);
