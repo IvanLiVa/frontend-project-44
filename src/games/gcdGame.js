@@ -16,14 +16,11 @@ const findFactor = (n) => {
   return multiplier;
 };
 
-const finCommonArray = (arr1, arr2) => {
+const findCommonArray = (arr1, arr2) => {
   const result = [];
   for (let i = 0; i < arr1.length; i += 1) {
-    for (let k = 0; k < arr1.length; k += 1) {
-      if (arr1[i] === arr2[k]) {
-        result.push(arr1[i]);
-        i += 1;
-      }
+    if (arr2.includes(arr1[i])) {
+      result.push(arr1[i]);
     }
   }
   return result;
@@ -45,7 +42,7 @@ const gcd = () => {
     const arr1 = findFactor(number1);
     const arr2 = findFactor(number2);
     const question = `${number1}  ${number2}`;
-    const commonArray = finCommonArray(arr1, arr2);
+    const commonArray = findCommonArray(arr1, arr2);
     const rightAnswer = findRightAnswer(commonArray);
     const isCorrect = mainLogicGame(question, rightAnswer, userName);
     if (isCorrect) {

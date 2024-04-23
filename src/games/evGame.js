@@ -10,8 +10,9 @@ const isEven = (count) => {
   }
   return undefined;
 };
-const userName = greeting('Answer "yes" if the number is even, otherwise answer "no".');
+
 const askNumberQuestions = () => {
+  const userName = greeting('Answer "yes" if the number is even, otherwise answer "no".');
   let i = 0;
   while (i < 3) {
     const question = Math.floor(Math.random() * 100);
