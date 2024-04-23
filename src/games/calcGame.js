@@ -1,10 +1,7 @@
 import mainLogicGame from '../index.js';
-import gretting from '../cli.js';
+import greeting from '../cli.js';
 
-const userName = gretting();
-const ruleGame = 'What is the result of the expression?';
-console.log(ruleGame);
-
+const userName = greeting('What is the result of the expression?');
 const calcExpression = (operator, number1, number2) => {
   switch (operator) {
     case '+':

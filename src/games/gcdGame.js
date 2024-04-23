@@ -1,6 +1,5 @@
-import reduce from 'lodash/reduce.js'; // это  было долго  )
 import mainLogicGame from '../index.js';
-import gretting from '../cli.js';
+import greeting from '../cli.js';
 
 const findFactor = (n) => {
   const multiplier = [];
@@ -17,7 +16,7 @@ const findFactor = (n) => {
   return multiplier;
 };
 
-const findGcd = (arr1, arr2) => {
+const finCommonArray = (arr1, arr2) => {
   const result = [];
   for (let i = 0; i < arr1.length; i += 1) {
     for (let k = 0; k < arr1.length; k += 1) {
@@ -27,16 +26,18 @@ const findGcd = (arr1, arr2) => {
       }
     }
   }
-  if (result.length === 0) {
+  return result;
+};
+
+const findRightAnswer = (arr) => {
+  if (arr.length === 0) {
     return 1;
   }
-  return reduce(result, (acc, rec) => acc * rec);
+  return arr.reduce((acc, rec) => acc * rec, 1);
 };
 
 const gcd = () => {
-  const userName = gretting();
-  const ruleGame = 'Find the greatest common divisor of given numbers.';
-  console.log(ruleGame);
+  const userName = greeting('Find the greatest common divisor of given numbers.');
   let i = 0;
   while (i < 3) {
     const number1 = Math.floor(Math.random() * 100);
@@ -44,7 +45,8 @@ const gcd = () => {
     const arr1 = findFactor(number1);
     const arr2 = findFactor(number2);
     const question = `${number1}  ${number2}`;
-    const rightAnswer = findGcd(arr1, arr2);
+    const commonArray = finCommonArray(arr1, arr2);
+    const rightAnswer = findRightAnswer(commonArray);
     const isCorrect = mainLogicGame(question, rightAnswer, userName);
     if (isCorrect) {
       i += 1;

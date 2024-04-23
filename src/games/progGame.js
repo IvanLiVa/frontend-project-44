@@ -1,5 +1,5 @@
 import mainLogicGame from '../index.js';
-import gretting from '../cli.js';
+import greeting from '../cli.js';
 
 const creatProgression = () => {
   // random array length for arrayResult
@@ -17,13 +17,10 @@ const creatProgression = () => {
 };
 
 const findNumProg = () => {
-  const userName = gretting();
-  const ruleGame = 'What number is missing in the progression?';
-  console.log(ruleGame);
+  const userName = greeting('What number is missing in the progression?');
   let i = 0;
   while (i < 3) {
     const progression = creatProgression();
-    console.log(progression.length);
     const hideCountIndex = Math.floor(Math.random() * (progression.length - 1));
     const rightAnswer = progression[hideCountIndex];
     progression[hideCountIndex] = '..'; // replace

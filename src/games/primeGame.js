@@ -1,4 +1,4 @@
-import gretting from '../cli.js';
+import greeting from '../cli.js';
 import mainLogicGame from '../index.js';
 
 const isPrime = (count) => {
@@ -15,9 +15,7 @@ const isPrime = (count) => {
 };
 
 const findPrime = () => {
-  const userName = gretting();
-  const ruleGame = 'Answer "yes" if given number is prime. Otherwise answer "no".';
-  console.log(ruleGame);
+  const userName = greeting('Answer "yes" if given number is prime. Otherwise answer "no".');
   let i = 0;
   while (i < 3) {
     const question = Math.floor(Math.random() * 100);
