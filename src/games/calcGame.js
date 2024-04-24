@@ -26,7 +26,7 @@ const generateExpression = () => {
   };
 };
 
-const calc = () => {
+const playCalcGame = () => {
   for (let i = 0; i < 3; i += 1) {
     const { question, rightAnswer } = generateExpression();
     const isCorrect = mainLogicGame(question, rightAnswer, userName);
@@ -35,4 +35,4 @@ const calc = () => {
   console.log(`Congratulations, ${userName}!`);
 };
 
-export default calc;
+export default playCalcGame;

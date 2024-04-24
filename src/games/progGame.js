@@ -1,13 +1,13 @@
 import mainLogicGame from '../index.js';
 import greeting from '../cli.js';
+import getRandomNumber from '../randomNumber.js';
+
+const userName = greeting('What number is missing in the progression?');
 
 const creatProgression = () => {
-  // random array length for arrayResult
-  const lengthResult = Math.floor(Math.random() * (9 - 4 + 1)) + 4;
-  // random commonDifference for arrayResult
-  const comDifference = Math.floor(Math.random() * lengthResult) + 1; // мин > 0
-  // first count in progression
-  let firstCount = Math.floor(Math.random() * 100);
+  const lengthResult = getRandomNumber(4, 9);
+  const comDifference = getRandomNumber(1, lengthResult);
+  let firstCount = getRandomNumber();
   const arrResult = [];
   for (let i = 0; i < lengthResult; i += 1) {
     arrResult[i] = firstCount;
@@ -16,23 +16,24 @@ const creatProgression = () => {
   return arrResult;
 };
 
-const findNumProg = () => {
-  const userName = greeting('What number is missing in the progression?');
-  let i = 0;
-  while (i < 3) {
-    const progression = creatProgression();
-    const hideCountIndex = Math.floor(Math.random() * (progression.length - 1));
-    const rightAnswer = progression[hideCountIndex];
-    progression[hideCountIndex] = '..'; // replace
-    const question = progression.join(' '); // 1 2 .. 3 4
+const generateExpression = () => {
+  const progression = creatProgression();
+  const hideCountIndex = getRandomNumber(0, progression.length - 1);
+  const rightAnswer = progression[hideCountIndex];
+  progression[hideCountIndex] = '..';
+  const question = progression.join(' ');
+  return { question, rightAnswer };
+};
+
+const playProgression = () => {
+  for (let i = 0; i < 3; i += 1) {
+    const { question, rightAnswer } = generateExpression();
     const isCorrect = mainLogicGame(question, rightAnswer, userName);
-    if (isCorrect) {
-      i += 1;
-    } else {
+    if (!isCorrect) {
       return;
     }
   }
   console.log(`Congratulations, ${userName}!`);
 };
 
-export default findNumProg;
+export default playProgression;

@@ -1,7 +1,7 @@
 {
   "name": "@hexlet/code",
   "version": "1.0.0",
-  "description": "[![Actions Status](https://github.com/IvanLiVa/frontend-project-44/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/IvanLiVa/frontend-project-44/actions)",
+  "description": " A collection of JavaScript console games developed as part of the Hexlet frontend project. Includes games like 'Even', 'Calculation', 'Greatest Common Divisor', 'Progression', and 'Prime'.",
   "bin": {
     "brain-games": "bin/brain-games.js",
     "brain-even": "bin/brain-even.js",
@@ -10,7 +10,7 @@
     "brain-progression":"bin/brain-progression.js",
     "brain-prime":"bin/brain-prime.js"
   },
-  "main": "index.js",
+  "main": "src/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

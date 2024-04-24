@@ -1,4 +1,4 @@
 #!/usr/bin/env node
-import findNumProg from '../src/games/progGame.js';
+import playProgression from '../src/games/progGame.js';
 
-findNumProg();
+playProgression();
