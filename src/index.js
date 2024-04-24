@@ -1,6 +1,6 @@
 import readlineSync from 'readline-sync';
 
-const mainLogicGame = (question, rightAnswer, userName) => {
+export const mainLogicGame = (question, rightAnswer, userName) => {
   const userAnswer = readlineSync.question(`Question: ${question}`);
   console.log(`Your answer: ${userAnswer}`);
   if (String(userAnswer) === String(rightAnswer)) {
@@ -12,4 +12,13 @@ const mainLogicGame = (question, rightAnswer, userName) => {
   return false;
 };
 
-export default mainLogicGame;
+export const playGame = (generateExpression, userName) => {
+  for (let i = 0; i < 3; i += 1) {
+    const { question, rightAnswer } = generateExpression();
+    const isCorrect = mainLogicGame(question, rightAnswer, userName);
+    if (!isCorrect) {
+      return;
+    }
+  }
+  console.log(`Congratulations, ${userName}!`);
+};

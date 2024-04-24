@@ -1,5 +1,5 @@
-import mainLogicGame from '../index.js';
 import greeting from '../cli.js';
+import { playGame } from '../index.js';
 
 const userName = greeting('What is the result of the expression?');
 const calcExpression = (operator, number1, number2) => {
@@ -27,12 +27,7 @@ const generateExpression = () => {
 };
 
 const playCalcGame = () => {
-  for (let i = 0; i < 3; i += 1) {
-    const { question, rightAnswer } = generateExpression();
-    const isCorrect = mainLogicGame(question, rightAnswer, userName);
-    if (!isCorrect) return;
-  }
-  console.log(`Congratulations, ${userName}!`);
+  playGame(generateExpression, userName);
 };
 
 export default playCalcGame;

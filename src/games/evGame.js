@@ -1,5 +1,5 @@
 import greeting from '../cli.js';
-import mainLogicGame from '../index.js';
+import { playGame } from '../index.js';
 import getRandomNumber from '../randomNumber.js';
 
 const userName = greeting('Answer "yes" if the number is even, otherwise answer "no".');
@@ -11,14 +11,7 @@ const generateExpression = () => {
 };
 
 const playEvGame = () => {
-  for (let i = 0; i < 3; i += 1) {
-    const { question, rightAnswer } = generateExpression();
-    const isCorrect = mainLogicGame(question, rightAnswer, userName);
-    if (!isCorrect) {
-      return;
-    }
-  }
-  console.log(`Congratulations, ${userName}!`);
+  playGame(generateExpression, userName);
 };
 
 export default playEvGame;

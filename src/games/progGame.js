@@ -1,4 +1,4 @@
-import mainLogicGame from '../index.js';
+import { playGame } from '../index.js';
 import greeting from '../cli.js';
 import getRandomNumber from '../randomNumber.js';
 
@@ -26,14 +26,7 @@ const generateExpression = () => {
 };
 
 const playProgression = () => {
-  for (let i = 0; i < 3; i += 1) {
-    const { question, rightAnswer } = generateExpression();
-    const isCorrect = mainLogicGame(question, rightAnswer, userName);
-    if (!isCorrect) {
-      return;
-    }
-  }
-  console.log(`Congratulations, ${userName}!`);
+  playGame(generateExpression, userName);
 };
 
 export default playProgression;
