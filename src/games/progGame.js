@@ -6,7 +6,7 @@ const ruleGame = 'What number is missing in the progression?';
 const creatProgression = () => {
   const lengthResult = getRandomNumber(4, 9);
   const comDifference = getRandomNumber(1, lengthResult);
-  let firstCount = getRandomNumber();
+  let firstCount = getRandomNumber(1, 99);
   const arrResult = [];
   for (let i = 0; i < lengthResult; i += 1) {
     arrResult[i] = firstCount;
