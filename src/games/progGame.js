@@ -4,7 +4,7 @@ import getRandomNumber from '../randomNumber.js';
 const ruleGame = 'What number is missing in the progression?';
 
 const creatProgression = () => {
-  const lengthResult = getRandomNumber(4, 9);
+  const lengthResult = getRandomNumber(5, 10);
   const comDifference = getRandomNumber(1, lengthResult);
   let firstCount = getRandomNumber(1, 99);
   const arrResult = [];
