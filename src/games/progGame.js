@@ -1,8 +1,7 @@
-import { playGame } from '../index.js';
-import greeting from '../cli.js';
+import playGame from '../index.js';
 import getRandomNumber from '../randomNumber.js';
 
-const userName = greeting('What number is missing in the progression?');
+const ruleGame = 'What number is missing in the progression?';
 
 const creatProgression = () => {
   const lengthResult = getRandomNumber(4, 9);
@@ -26,7 +25,7 @@ const generateExpression = () => {
 };
 
 const playProgression = () => {
-  playGame(generateExpression, userName);
+  playGame(generateExpression, ruleGame);
 };
 
 export default playProgression;

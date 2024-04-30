@@ -1,7 +1,7 @@
-import greeting from '../cli.js';
-import { playGame } from '../index.js';
+import playGame from '../index.js';
+import getRandomNumber from '../randomNumber.js';
 
-const userName = greeting('What is the result of the expression?');
+const ruleGame = 'What is the result of the expression?';
 const calcExpression = (operator, number1, number2) => {
   switch (operator) {
     case '+':
@@ -18,8 +18,8 @@ const calcExpression = (operator, number1, number2) => {
 const generateExpression = () => {
   const operators = ['+', '-', '*'];
   const randomOperator = operators[Math.floor(Math.random() * operators.length)];
-  const number1 = Math.floor(Math.random() * 100);
-  const number2 = Math.floor(Math.random() * 100);
+  const number1 = getRandomNumber();
+  const number2 = getRandomNumber();
   return {
     question: `${number1} ${randomOperator} ${number2}`,
     rightAnswer: calcExpression(randomOperator, number1, number2),
@@ -27,7 +27,7 @@ const generateExpression = () => {
 };
 
 const playCalcGame = () => {
-  playGame(generateExpression, userName);
+  playGame(generateExpression, ruleGame);
 };
 
 export default playCalcGame;
